@@ -109,20 +109,26 @@ const services = [
   },
 ];
 
-export default function Services() {
+interface Props {
+  withHeader?: boolean;
+}
+
+export default function Services({ withHeader = true }: Props) {
   return (
-    <section id="services" className="py-32 px-6">
+    <section id="services" className={withHeader ? "py-20 px-6" : "pb-20 px-6"}>
       <div className="max-w-7xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <span className="tag mb-4 inline-block">Services</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Un spectre <span className="gradient-text">complet</span> de compétences
-          </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-lg">
-            De la stratégie data à la livraison de produits. Un seul interlocuteur
-            pour tous vos besoins tech.
-          </p>
-        </AnimatedSection>
+        {withHeader && (
+          <AnimatedSection className="text-center mb-16">
+            <span className="tag mb-4 inline-block">Services</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Un spectre <span className="gradient-text">complet</span> de compétences
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto text-lg">
+              De la stratégie data à la livraison de produits. Un seul interlocuteur
+              pour tous vos besoins tech.
+            </p>
+          </AnimatedSection>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, i) => (

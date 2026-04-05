@@ -13,23 +13,29 @@ function LinkedinIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-export default function Contact() {
+interface Props {
+  withHeader?: boolean;
+}
+
+export default function Contact({ withHeader = true }: Props) {
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        <AnimatedSection className="text-center">
-          <span className="tag mb-4 inline-block">Contact</span>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Un projet en tête ?
-            <br />
-            <span className="gradient-text">Parlons-en.</span>
-          </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-            Chaque collaboration commence par un échange. Décrivez-moi votre projet,
-            vos enjeux, vos idées — même floues. Je vous réponds sous 24h avec
-            un premier avis et les prochaines étapes possibles.
-          </p>
-        </AnimatedSection>
+        {withHeader && (
+          <AnimatedSection className="text-center">
+            <span className="tag mb-4 inline-block">Contact</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Un projet en tête ?
+              <br />
+              <span className="gradient-text">Parlons-en.</span>
+            </h2>
+            <p className="text-text-secondary text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+              Chaque collaboration commence par un échange. Décrivez-moi votre projet,
+              vos enjeux, vos idées — même floues. Je vous réponds sous 24h avec
+              un premier avis et les prochaines étapes possibles.
+            </p>
+          </AnimatedSection>
+        )}
 
         <AnimatedSection delay={0.2}>
           <div className="glass-card rounded-2xl p-8 md:p-12">
@@ -43,7 +49,7 @@ export default function Contact() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="mailto:contact@leogontier.fr"
+                    href="mailto:pro.leogontier@gmail.com"
                     className="flex items-center gap-3 group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent-light group-hover:bg-accent/20 transition-colors">
@@ -52,7 +58,7 @@ export default function Contact() {
                     <div>
                       <div className="text-sm text-text-muted">Email</div>
                       <div className="text-text-primary group-hover:text-accent-light transition-colors">
-                        contact@leogontier.fr
+                        pro.leogontier@gmail.com
                       </div>
                     </div>
                   </a>
@@ -114,7 +120,7 @@ export default function Contact() {
                 </div>
 
                 <a
-                  href="mailto:contact@leogontier.fr"
+                  href="mailto:pro.leogontier@gmail.com"
                   className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent text-white font-medium hover:bg-accent-light transition-all hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]"
                 >
                   Envoyer un message

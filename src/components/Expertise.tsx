@@ -68,20 +68,25 @@ const levelLabels = {
   solid: "Maîtrisé",
 };
 
-export default function Expertise() {
+interface Props {
+  withHeader?: boolean;
+}
+
+export default function Expertise({ withHeader = true }: Props) {
   return (
-    <section id="expertise" className="py-32 px-6 bg-bg-secondary/50">
+    <section id="expertise" className="py-20 px-6 bg-bg-secondary/30">
       <div className="max-w-7xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <span className="tag mb-4 inline-block">Stack technique</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Des compétences <span className="gradient-text">concrètes</span>
-          </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-lg">
-            Pas de buzzwords. Des outils que je maîtrise et que j&apos;utilise au quotidien
-            sur des projets réels.
-          </p>
-        </AnimatedSection>
+        {withHeader && (
+          <AnimatedSection className="text-center mb-14">
+            <span className="tag mb-4 inline-block">Stack technique</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              Les outils que <span className="gradient-text">j&apos;utilise au quotidien</span>
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Pas de buzzwords. Des technologies maîtrisées sur des projets réels.
+            </p>
+          </AnimatedSection>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillGroups.map((group, i) => (

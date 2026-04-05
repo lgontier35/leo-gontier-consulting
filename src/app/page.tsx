@@ -1,11 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Methodology from "@/components/Methodology";
-import Projects from "@/components/Projects";
-import About from "@/components/About";
-import Conviction from "@/components/Conviction";
-import Contact from "@/components/Contact";
+import HomePillars from "@/components/home/HomePillars";
+import HomeNumbers from "@/components/home/HomeNumbers";
+import HomeFeatured from "@/components/home/HomeFeatured";
+import HomeQuickFlow from "@/components/home/HomeQuickFlow";
+import HomeFinalCTA from "@/components/home/HomeFinalCTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,17 +13,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <div className="section-divider" />
-        <Services />
-        <div className="section-divider" />
-        <Methodology />
-        <div className="section-divider" />
-        <Projects />
-        <div className="section-divider" />
-        <About />
-        <Conviction />
-        <div className="section-divider" />
-        <Contact />
+        <HomePillars />
+        <HomeNumbers />
+        <HomeFeatured />
+        <HomeQuickFlow />
+        <HomeFinalCTA />
       </main>
       <Footer />
     </>

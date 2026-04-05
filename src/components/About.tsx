@@ -25,16 +25,22 @@ function LinkedinIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-export default function About() {
+interface Props {
+  withHeader?: boolean;
+}
+
+export default function About({ withHeader = true }: Props) {
   return (
-    <section id="about" className="py-32 px-6 bg-bg-secondary/50">
+    <section id="about" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <span className="tag mb-4 inline-block">À propos</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Qui suis-je <span className="gradient-text">?</span>
-          </h2>
-        </AnimatedSection>
+        {withHeader && (
+          <AnimatedSection className="text-center mb-14">
+            <span className="tag mb-4 inline-block">À propos</span>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Qui suis-je <span className="gradient-text">?</span>
+            </h2>
+          </AnimatedSection>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
           {/* Left column — Identity card (2/5) */}

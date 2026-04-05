@@ -70,21 +70,26 @@ const steps: Step[] = [
   },
 ];
 
-export default function Methodology() {
+interface Props {
+  withHeader?: boolean;
+}
+
+export default function Methodology({ withHeader = true }: Props) {
   return (
-    <section id="methodologie" className="py-32 px-6">
+    <section id="methodologie" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <span className="tag mb-4 inline-block">Approche</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Un accompagnement <span className="gradient-text-warm">sur-mesure</span>
-          </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-lg">
-            Chaque projet est unique. Je travaille en one-to-one avec vous,
-            pas de sous-traitance, pas d&apos;intermédiaire. Vous parlez directement
-            à celui qui conçoit et développe.
-          </p>
-        </AnimatedSection>
+        {withHeader && (
+          <AnimatedSection className="text-center mb-14">
+            <span className="tag mb-4 inline-block">Méthodologie</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              Un accompagnement <span className="gradient-text-warm">sur-mesure</span>
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Chaque projet est unique. Je travaille en one-to-one avec vous,
+              pas de sous-traitance. Vous parlez directement à celui qui conçoit et développe.
+            </p>
+          </AnimatedSection>
+        )}
 
         {/* Key values */}
         <AnimatedSection className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">

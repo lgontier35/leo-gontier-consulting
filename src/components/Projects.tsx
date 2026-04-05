@@ -73,20 +73,25 @@ const projects: Project[] = [
   },
 ];
 
-export default function Projects() {
+interface Props {
+  withHeader?: boolean;
+}
+
+export default function Projects({ withHeader = true }: Props) {
   return (
-    <section id="projets" className="py-32 px-6">
+    <section id="projets" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <AnimatedSection className="text-center mb-16">
-          <span className="tag mb-4 inline-block">Réalisations</span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Des projets <span className="gradient-text-warm">concrets</span>
-          </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-lg">
-            Pas de maquettes Figma. Des produits livrés, en production,
-            qui génèrent de la valeur au quotidien.
-          </p>
-        </AnimatedSection>
+        {withHeader && (
+          <AnimatedSection className="text-center mb-14">
+            <span className="tag mb-4 inline-block">Réalisations</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              Des projets <span className="gradient-text-warm">concrets</span>
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Pas de maquettes Figma. Des produits livrés, en production.
+            </p>
+          </AnimatedSection>
+        )}
 
         <div className="space-y-8">
           {projects.map((project, i) => (

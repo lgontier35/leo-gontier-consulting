@@ -54,7 +54,7 @@ export default function Hero() {
           style={{ animationDelay: "0.45s" }}
         >
           <a
-            href="#contact"
+            href="/contact"
             className="group px-8 py-4 rounded-full bg-accent text-white font-medium hover:bg-accent-light transition-all hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]"
           >
             Parlons de votre projet
@@ -63,7 +63,7 @@ export default function Hero() {
             </span>
           </a>
           <a
-            href="#services"
+            href="/services"
             className="px-8 py-4 rounded-full border border-border text-text-secondary hover:text-text-primary hover:border-border-light transition-all"
           >
             Découvrir mes services
@@ -74,9 +74,9 @@ export default function Hero() {
 
       {/* Scroll arrow — outside centered container, pinned to section bottom */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hero-fade-in" style={{ animationDelay: "1.2s" }}>
-        <a href="#services" className="text-text-muted hover:text-text-secondary transition-colors">
+        <div className="text-text-muted">
           <ArrowDown size={20} className="animate-bounce" />
-        </a>
+        </div>
       </div>
     </section>
   );
